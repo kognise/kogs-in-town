@@ -1,7 +1,7 @@
 <div align='center'>
 	<h1>Kogs in Town</h1>
 	<p>It's like Bands in Town, but custom-made for me!</p>
-	<img src='https://doggo.ninja/mNrgBY.png' alt='A screenshot of the website. Title: Kogs in Town. Subtitle: Local shows around San Francisco. Website body is a list of musical artists with accompanying images, dates, and locations.' width='800'>
+	<a href='https://bands.kognise.dev' target='_blank'><img src='https://doggo.ninja/mNrgBY.png' alt='A screenshot of the website. Title: Kogs in Town. Subtitle: Local shows around San Francisco. Website body is a list of musical artists with accompanying images, dates, and locations.' width='800'></a>
 </div>
 
 ## What?
