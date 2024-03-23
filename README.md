@@ -18,6 +18,8 @@ Probably not. Well, it has a public URL, so be my guest, but it probably won't b
 
 I'm putting it on GitHub because sharing source code is fun and important to the world. If you want a similar tool for yourself, fork this! I bet you can use some of the code!
 
+Live URL: https://bands.kognise.dev/
+
 ## Bucket List
 
 - Display a warning when data is out of date due to a fetch error
