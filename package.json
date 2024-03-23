@@ -1,0 +1,20 @@
+{
+  "name": "kogs-in-town",
+  "module": "src/index.ts",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "jsdom": "^24.0.0",
+    "luxon": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsdom": "^21.1.6",
+    "@types/luxon": "^3.4.2",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

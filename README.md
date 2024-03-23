@@ -1,0 +1,25 @@
+<div align='center'>
+	<h1>Kogs in Town</h1>
+	<p>It's like Bands in Town, but personalized for me!</p>
+	<img src='https://doggo.ninja/bQSX5m.png' alt='A screenshot of the website. Title: Kogs in Town. Subtitle: Local shows around San Francisco. Website body is a list of musical artists with accompanying images, dates, and locations.' width='800'>
+</div>
+
+## What?
+
+Spotify's Live Events feature is awesome, but it misses a bunch of local shows. Every other event aggregator, Bands in Town as a salient example, also misses lots of events. They also tend to have absolutely horrible UIs that do not at all facilitate quickly scanning through shows.
+
+So I made my own personal tool that pulls from the websites of a couple of venues close to where I live. It also uses Spotify's private API (shh, don't tell anyone) to pull my list of recommended live events.
+
+It has a fast, dense UI that facilitates scanning. If I feel like it, I will add features in the future to save events or hide them.
+
+## Can I Use This?
+
+Probably not. Well, it has a public URL, so be my guest, but it probably won't be very helpful to you unless you live with me and have the same music taste as me. (So, my roommate might actually find it helpful. Hi Galen.) 
+
+I'm putting it on GitHub because sharing source code is fun and important to the world. If you want a similar tool for yourself, fork this! I bet you can use some of the code!
+
+## Bucket List
+
+- Display a warning when data is out of date due to a fetch error
+- Hiding/highlighting functionality (maybe refactor to Preact or something)
+- GitHub-style heatmap

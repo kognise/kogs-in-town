@@ -1,0 +1,127 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Sofia Sans Semi Condensed', sans-serif;
+	background: #212529;
+	color: #dee2e6;
+	max-width: 1200px;
+	margin: 0 auto;
+	line-height: 1.4;
+	padding: 20px 10px;
+}
+
+h1 {
+	color: #ff4e8c;
+	font-weight: 700;
+	font-size: 3rem;
+	text-align: center;
+	margin: 0;
+}
+
+.subtitle {
+	text-align: center;
+	font-size: 1.3rem;
+	color: #868e96;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.shows {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.show {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: stretch;
+	--padding: 8px;
+	--border-radius: 10px;
+
+	&.ignored {
+		opacity: 0.2;
+	}
+
+	& .thumbnail {
+		--size: 80px;
+		width: var(--size);
+		height: var(--size);
+		border-radius: var(--border-radius);
+		display: block;
+		object-fit: cover;
+		opacity: 0.5;
+	}
+
+	& .details {
+		padding: var(--padding);
+		border-radius: var(--border-radius);
+		flex: 2;
+		font-size: 1rem;
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+		color: inherit;
+
+		& .artist {
+			font-size: 1em;
+			font-weight: 700;
+			margin: 0;
+			margin-top: -0.3em;
+		}
+
+		& .opener {
+			font-size: 1em;
+			margin: 0;
+		}
+
+		& .tour {
+			font-size: 0.8rem;
+			color: #868e96;
+			margin: 0;
+			margin-top: 3px;
+		}
+
+		&:hover {
+			background: #191c1f;
+		}
+	}
+
+	&.highlighted .details {
+		background: #e649802b;
+
+		&:hover {
+			background: #e6498045;
+		}
+	}
+
+	& .logistics {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		color: #868e96;
+		font-size: 0.8rem;
+		padding: var(--padding);
+
+		& .date {
+			font-size: 1.2rem;
+			margin: 0;
+			color: #adb5bd;
+			margin-top: -0.3em;
+		}
+
+		& .venue {
+			margin: 0;
+		}
+
+		& .doors {
+			margin: 0;
+		}
+	}
+}

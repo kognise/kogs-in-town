@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Kogs in Town</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='stylesheet' href='/style.css'>
+		<link rel='preconnect' href='https://fonts.googleapis.com'>
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@1..1000&display=swap'>
+		<link rel='icon' href='/favicon.png'>
+	</head>
+	<body>
+		<h1>Kogs in Town</h1>
+		<p class='subtitle'>Local shows around San Francisco</p>
+
+		<ul class='shows'>
+			<% for (const event of events) { %>
+				<li class='show'>
+					<img class='thumbnail' loading='lazy' src='<%= event.thumbnailUrl %>'>
+
+					<a class='details' href='<%= event.url %>' target='_blank'>
+						<h2 class='artist'>
+							<%= event.artist %>
+						</h2>
+				
+						<% if (event.opener) { %>
+							<p class='opener'>
+								<%= event.opener %>
+							</p>
+						<% } %>
+				
+						<% if (event.tour) { %>
+							<p class='tour'>
+								<%= event.tour %>
+							</p>
+						<% } %>
+					</a>
+
+					<div class='logistics'>
+						<p class='date'>
+							<%=
+								new Intl.DateTimeFormat('en-US', {
+									month: 'short',
+									day: 'numeric',
+									timeZone: 'America/Los_Angeles'
+								}).format(event.showTime)
+							%>
+						</p>
+
+						<p class='venue'>
+							<%= event.venue %>
+						</p>
+				
+						<p class='doors'>
+							<%=
+								new Intl.DateTimeFormat('en-US', {
+									hour: 'numeric',
+									minute: 'numeric',
+									hour12: false,
+									timeZone: 'America/Los_Angeles'
+								}).format(event.showTime)
+							%>
+						</p>
+					</div>
+				</li>
+			<% } %>
+		</ul>
+
+		<script src='/script.js'></script>
+	</body>
+</html>
