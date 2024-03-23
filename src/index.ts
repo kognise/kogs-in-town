@@ -2,10 +2,10 @@ import express from 'express'
 import { fetchAllEvents } from './aggregate'
 
 
-let events = await fetchAllEvents()
+let allEvents = await fetchAllEvents()
 setInterval(async () => {
 	console.log('Fetching new events')
-	events = await fetchAllEvents()
+	allEvents = await fetchAllEvents()
 }, 6 * 60 * 60 * 1000) // Every 6 hours
 
 
@@ -17,6 +17,8 @@ app.set('views', 'src/templates')
 app.use(express.static('src/static'))
 
 app.get('/', async (req, res) => {
+	const events = allEvents
+		.filter(event => (event.showTime.getTime() - Date.now()) > 1 * 60 * 60 * 1000) // >1 hour in the future
 	res.render('index', { events })
 })
 
