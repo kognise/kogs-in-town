@@ -4,6 +4,6 @@ export interface VenueEvent {
 	opener: string | null
 	tour: string | null
 	showTime: Date
-	thumbnailUrl: string
+	thumbnailUrl: string | null
 	url: string
 }

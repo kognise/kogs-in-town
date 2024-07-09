@@ -17,7 +17,7 @@
 		<ul class='shows'>
 			<% for (const event of events) { %>
 				<li class='show'>
-					<img class='thumbnail' loading='lazy' src='<%= event.thumbnailUrl %>'>
+					<img class='thumbnail' loading='lazy' src='<%= event.thumbnailUrl ?? '/no-avatar.svg' %>'>
 
 					<a class='details' href='<%= event.url %>' target='_blank'>
 						<h2 class='artist'>
