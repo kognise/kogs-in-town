@@ -9,4 +9,4 @@ COPY . .
 USER bun
 EXPOSE 3000/tcp
 ENV NODE_ENV=production
-ENTRYPOINT [ "bun", "run", "src/index.ts" ]
+ENTRYPOINT [ "bun", "run", "--smol", "src/index.ts" ]
