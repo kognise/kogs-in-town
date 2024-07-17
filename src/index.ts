@@ -1,8 +1,12 @@
 import express from 'express'
 import { fetchAllEvents } from './aggregate'
+import { VenueEvent } from './types'
 
 
-let allEvents = await fetchAllEvents()
+let allEvents: VenueEvent[] = []
+
+fetchAllEvents().then(events => { allEvents = events })
+
 setInterval(async () => {
 	console.log('Fetching new events')
 	allEvents = await fetchAllEvents()
