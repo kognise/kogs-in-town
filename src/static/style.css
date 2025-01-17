@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Sofia Sans Semi Condensed', sans-serif;
-	background: #212529;
+	background: #171b1f;
 	color: #dee2e6;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-	color: #ff4e8c;
+	color: #ff2f78;
 	font-weight: 700;
 	font-size: 3rem;
 	text-align: center;
@@ -28,13 +28,29 @@ h1 {
 	margin-bottom: 20px;
 }
 
-.shows {
+.heading {
+	font-size: 1.3rem;
+	/* color: #868e96; */
+	font-weight: 400;
+	margin: 0;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.today, .future {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr;
 	gap: 10px;
+}
+
+.today {
+	opacity: 0.7;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	margin-bottom: 40px;
+	row-gap: 5px;
 }
 
 .show {
@@ -69,6 +85,10 @@ h1 {
 		text-decoration: none;
 		color: inherit;
 
+		&.only {
+			font-size: 1.2rem;
+		}
+
 		& .artist {
 			font-size: 1em;
 			font-weight: 700;
@@ -82,14 +102,14 @@ h1 {
 		}
 
 		& .tour {
-			font-size: 0.8rem;
+			font-size: 0.8em;
 			color: #868e96;
 			margin: 0;
 			margin-top: 3px;
 		}
 
 		&:hover {
-			background: #191c1f;
+			background: #23272d;
 		}
 	}
 
@@ -122,6 +142,21 @@ h1 {
 
 		& .doors {
 			margin: 0;
+		}
+	}
+
+	.today & {
+		& .thumbnail {
+			--size: 50px;
+		}
+
+		& .details {
+			font-size: 0.9rem;
+			flex: 1;
+		}
+
+		& .logistics {
+			font-size: 0.8rem;
 		}
 	}
 }

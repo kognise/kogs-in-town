@@ -1,3 +1,58 @@
+<% function render(event, isToday) { %>
+	<li class='show'>
+		<img class='thumbnail' loading='lazy' src='<%= event.thumbnailUrl ?? '/no-avatar.svg' %>'>
+
+		<a class='details <%= event.opener ? '' : 'only' %>' href='<%= event.url %>' target='_blank'>
+			<h2 class='artist'>
+				<%= event.artist %>
+			</h2>
+	
+			<% if (event.opener) { %>
+				<p class='opener'>
+					<%= event.opener %>
+				</p>
+			<% } %>
+	
+			<% if (event.tour) { %>
+				<p class='tour'>
+					<%= event.tour %>
+				</p>
+			<% } %>
+		</a>
+
+		<div class='logistics'>
+			<% if (!isToday) { %>
+				<p class='date'>
+					<%=
+						new Intl.DateTimeFormat('en-US', {
+							month: 'short',
+							day: 'numeric',
+							timeZone: 'America/Los_Angeles'
+						}).format(event.showTime)
+					%>
+				</p>
+			<% } %>
+
+			<p class='venue'>
+				<%= event.venue %>
+			</p>
+	
+			<% if (!event.isOnlyDateKnown) { %>
+				<p class='doors'>
+					<%=
+						new Intl.DateTimeFormat('en-US', {
+							hour: 'numeric',
+							minute: 'numeric',
+							hour12: false,
+							timeZone: 'America/Los_Angeles'
+						}).format(event.showTime)
+					%>
+				</p>
+			<% } %>
+		</div>
+	</li>
+<% } %>
+
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
@@ -12,58 +67,21 @@
 	</head>
 	<body>
 		<h1>Kogs in Town</h1>
-		<p class='subtitle'>Local shows around San Francisco</p>
+		<p class='subtitle'>The bestest San Francisco concert aggregator</p>
 
-		<ul class='shows'>
-			<% for (const event of events) { %>
-				<li class='show'>
-					<img class='thumbnail' loading='lazy' src='<%= event.thumbnailUrl ?? '/no-avatar.svg' %>'>
+		<% if (todayEvents.length > 0) { %>
+			<h2 class='heading'>Events today</h2>
+			<ul class='today'>
+				<% for (const event of todayEvents) { %>
+					<%= render(event, true) %>
+				<% } %>
+			</ul>
+		<% } %>
 
-					<a class='details' href='<%= event.url %>' target='_blank'>
-						<h2 class='artist'>
-							<%= event.artist %>
-						</h2>
-				
-						<% if (event.opener) { %>
-							<p class='opener'>
-								<%= event.opener %>
-							</p>
-						<% } %>
-				
-						<% if (event.tour) { %>
-							<p class='tour'>
-								<%= event.tour %>
-							</p>
-						<% } %>
-					</a>
-
-					<div class='logistics'>
-						<p class='date'>
-							<%=
-								new Intl.DateTimeFormat('en-US', {
-									month: 'short',
-									day: 'numeric',
-									timeZone: 'America/Los_Angeles'
-								}).format(event.showTime)
-							%>
-						</p>
-
-						<p class='venue'>
-							<%= event.venue %>
-						</p>
-				
-						<p class='doors'>
-							<%=
-								new Intl.DateTimeFormat('en-US', {
-									hour: 'numeric',
-									minute: 'numeric',
-									hour12: false,
-									timeZone: 'America/Los_Angeles'
-								}).format(event.showTime)
-							%>
-						</p>
-					</div>
-				</li>
+		<h2 class='heading'>Future events</h2>
+		<ul class='future'>
+			<% for (const event of futureEvents) { %>
+				<%= render(event) %>
 			<% } %>
 		</ul>
 

@@ -12,9 +12,18 @@ So I made my own personal tool that pulls from the websites of a couple of venue
 
 It has a fast, dense UI that facilitates scanning. If I feel like it, I will add features in the future to save events or hide them.
 
+## Where Does It Pull from?
+
+- The Regency Ballroom
+- The Warfield
+- Bill Graham Civic Auditorium
+- Oracle Park Concert Series
+- Spotify Personal Suggestions
+- Spotify Popular in Your Area
+
 ## Can I Use This?
 
-Probably not. Well, it has a public URL, so be my guest, but it probably won't be very helpful to you unless you live with me and have the same music taste as me. (So, my roommate might actually find it helpful. Hi Galen.) 
+Probably not. Well, it has a public URL, so be my guest, but it probably won't be very helpful to you unless you live with me and have the same music taste as me. (So, my roommate might actually find it helpful. Hi Galen.)
 
 I'm putting it on GitHub because sharing source code is fun and important to the world. If you want a similar tool for yourself, fork this! I bet you can use some of the code!
 
